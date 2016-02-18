@@ -1,11 +1,12 @@
 int maxSegment(vector<int>& seg1, vector<int>& seg2){
   vector<pair<int,char>> sum;
   for(int i = 0 ; i < seg1.size(); i++){
-    // sum.push_back(make_pair())
+    // !!! sum.push_back(make_pair())
     sum.push_back(make_pair(seg1[i],'S'));
   }
+  // !!! char is single ' ' ,'X' will help make seg2 appear after seg1
   for(int j = 0; j < seg2.size(); j++){
-    sum.push_back(make_pair(seg2[j], 'X'));   // char is single ' ' ,'X' will help make seg2 appear after seg1
+    sum.push_back(make_pair(seg2[j], 'X'));   
   }
   sort(sum.begin(), sum.end());
   int maxNum = 0;
@@ -19,6 +20,7 @@ int maxSegment(vector<int>& seg1, vector<int>& seg2){
 }
   
 int main() {
+  // !!! vector<int> myvector { , }; syntax
   vector<int> starts {3, 1, 2, 5, 11};
   vector<int> ends {5, 9, 10, 7, 13};
   
